@@ -84,7 +84,7 @@ export default function Questions() {
         ) : undefined}
         <button
           onClick={nextHandler}
-          disabled={questionsList[questionIndex]?.selectedIndex ? false : true}
+          disabled={questionsList[questionIndex]?.answer ? false : true}
         >
           Next
         </button>
