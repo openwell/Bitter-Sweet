@@ -53,6 +53,7 @@ export default function Questions() {
     stateClone[questionIndex].selectedIndex = index;
     setQuestionsList((prev) => [...stateClone]);
     // setSelected({ index: index, answer: answer });
+    nextHandler()
   };
   useEffect(() => {
     if (mainState.gender == 'male') {
@@ -78,7 +79,7 @@ export default function Questions() {
           questionIndex={questionIndex}
         />
       </div>
-      <div className="nav-Btn-Wrapper">
+      {/* <div className="nav-Btn-Wrapper">
         {questionIndex != 0 ? (
           <button onClick={prevHandler}>Prev</button>
         ) : undefined}
@@ -88,7 +89,7 @@ export default function Questions() {
         >
           Next
         </button>
-      </div>
+      </div> */}
     </Styled>
   );
 }
