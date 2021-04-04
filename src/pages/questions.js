@@ -20,7 +20,7 @@ export function AnswerItems(props) {
             }`}
             onClick={() => props.selectedItemHandler(i, elem.alt)}
           >
-            {/* <img src={FemaleImg} alt="" /> */} {elem.alt || elem}
+            {elem.img ? <img src={elem.img} alt="" /> : elem.alt}
           </div>
         );
       })}
@@ -53,7 +53,7 @@ export default function Questions() {
     stateClone[questionIndex].selectedIndex = index;
     setQuestionsList((prev) => [...stateClone]);
     // setSelected({ index: index, answer: answer });
-    nextHandler()
+    nextHandler();
   };
   useEffect(() => {
     if (mainState.gender == 'male') {
@@ -150,9 +150,14 @@ const Styled = styled.div`
       justify-content: center;
       align-items: center;
       cursor: pointer;
+      overflow: hidden;
       :hover {
         background: #cecece;
         color: #000;
+      }
+      img {
+        width: 100%;
+        height: auto;
       }
     }
     .image-answer-box-active {
